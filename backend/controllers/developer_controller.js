@@ -1,3 +1,7 @@
+// Developers:
+//1. Adi Hershko, id: 208729814
+//2. Ori Amrani, id: 206752313
+
 import Developer from "../../DB/models/developer_model.js";
 
 async function createDeveloper(req, res){

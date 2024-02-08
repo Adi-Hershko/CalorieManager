@@ -1,3 +1,7 @@
+// Developers:
+//1. Adi Hershko, id: 208729814
+//2. Ori Amrani, id: 206752313
+
 import Calorie from "../../DB/models/calorie_model.js";
 import User from "../../DB/models/user_model.js";
 

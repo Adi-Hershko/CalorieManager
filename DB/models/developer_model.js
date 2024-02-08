@@ -1,3 +1,7 @@
+// Developers:
+//1. Adi Hershko, id: 208729814
+//2. Ori Amrani, id: 206752313
+
 import mongoose from "mongoose";
 
 const { Schema, model } = mongoose;
