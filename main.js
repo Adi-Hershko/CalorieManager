@@ -18,7 +18,7 @@ app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
 // Change /api to the link 
-app.use("/api", user_router, developer_router, calorie_router);
+app.use("/", user_router, developer_router, calorie_router);
 
 const PORT = process.env.PORT;
 
