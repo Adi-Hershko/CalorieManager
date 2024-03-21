@@ -4,10 +4,10 @@
 
 import Express from "express";
 import dotenv from "dotenv";
-import connectDB  from "./DB/config.js";
-import user_router from "./backend/routes/user_routes.js";
-import developer_router from "./backend/routes/developer_routes.js"
-import calorie_router from "./backend/routes/calorie_router.js";
+import connectDB from "./DB/config.js";
+import userRouter from "./backend/routes/user_routes.js";
+import developerRouter from "./backend/routes/developer_routes.js"
+import calorieRouter from "./backend/routes/calorie_router.js";
 
 dotenv.config();
 const app = Express();
@@ -17,12 +17,11 @@ connectDB();
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
-// Change /api to the link 
-app.use("/", user_router, developer_router, calorie_router);
+app.use("/", userRouter, developerRouter, calorieRouter);
 
-const PORT = process.env.PORT;
+const port = process.env.PORT;
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-    }
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+}
 );

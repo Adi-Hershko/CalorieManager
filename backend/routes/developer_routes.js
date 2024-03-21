@@ -3,12 +3,12 @@
 //2. Ori Amrani, id: 206752313
 
 import Express from 'express';
-import {createDeveloper, getDevelopers} from '../controllers/developer_controller.js';
+import { createDeveloper, getDevelopers } from '../controllers/developer_controller.js';
 
-const developer_router = Express.Router();
+const developerRouter = Express.Router();
 
-developer_router.get('/about', getDevelopers);
+developerRouter.get('/about', getDevelopers);
 
-developer_router.post('/createdeveloper', createDeveloper);
+developerRouter.post('/createdeveloper', createDeveloper);
 
-export default developer_router;
+export default developerRouter;

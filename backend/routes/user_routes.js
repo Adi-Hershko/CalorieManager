@@ -5,8 +5,8 @@
 import Express from "express";
 import { createNewUser } from "../controllers/user_controller.js";
 
-const user_router = Express.Router();
+const userRouter = Express.Router();
 
-user_router.post('/signup', createNewUser);
+userRouter.post('/signup', createNewUser);
 
-export default user_router;
+export default userRouter;

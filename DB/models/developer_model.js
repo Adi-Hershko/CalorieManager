@@ -12,11 +12,11 @@ const developerSchema = new Schema({
         required: true,
         unique: true
     },
-    first_name: {
+    firstname: {
         type: String,
         required: true
     },
-    last_name: {
+    lastname: {
         type: String,
         required: true
     },

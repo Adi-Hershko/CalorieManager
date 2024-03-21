@@ -6,9 +6,9 @@ const AutoIncrement = AutoIncrementFactory(mongoose);
 
 const calorieSchema = new Schema({
   // No need to define the id field here, it will be added by mongoose-sequence
-  user_id: {
+  userID: {
     type: Number,
-    required: true    
+    required: true
   },
   year: {
     type: Number,
@@ -42,7 +42,7 @@ const calorieSchema = new Schema({
 });
 
 // Apply the autoIncrement plugin to the schema and specify the field name
-calorieSchema.plugin(AutoIncrement, {inc_field: 'id'});
+calorieSchema.plugin(AutoIncrement, { inc_field: 'id' });
 
 const Calorie = model('Calorie', calorieSchema);
 
