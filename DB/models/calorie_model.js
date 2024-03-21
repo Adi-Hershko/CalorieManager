@@ -6,7 +6,7 @@ const AutoIncrement = AutoIncrementFactory(mongoose);
 
 const calorieSchema = new Schema({
   // No need to define the id field here, it will be added by mongoose-sequence
-  userID: {
+  user_id: {
     type: Number,
     required: true
   },

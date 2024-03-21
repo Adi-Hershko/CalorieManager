@@ -58,7 +58,7 @@ async function addCalories(req, res) {
     }
     try {
         const newEntry = new Calorie({
-            userID: userID,
+            user_id: userID,
             year: year,
             month: month,
             day: day,
