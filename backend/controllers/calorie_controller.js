@@ -7,9 +7,9 @@ import User from "../../DB/models/user_model.js";
 
 async function getReport(req, res) {
     try {
-        const { year, month, userID: userID } = req.query;
+        const { year, month, user_id } = req.query;
         // Check if all required query parameters are present
-        if (!year || !month || !userID) {
+        if (!year || !month || !user_id) {
             return res.status(400).json({ message: 'Missing required query parameters' });
         }
         // Check if year is a valid number
@@ -17,14 +17,14 @@ async function getReport(req, res) {
             return res.status(400).json({ message: 'Invalid month value' });
         }
         // Check if a user with the given ID exists
-        if (!await User.findOne({ id: userID })) {
+        if (!await User.findOne({ id: user_id })) {
             return res.status(404).json({ message: 'User not found' });
         }
 
         const results = await Calorie.find({
             year: parseInt(year),
             month: parseInt(month),
-            userID: parseInt(userID)
+            user_id: parseInt(user_id)
         });
 
 
@@ -51,14 +51,14 @@ async function getReport(req, res) {
 
 
 async function addCalories(req, res) {
-    const { userID, year, month, day, description, category, amount } = req.body;
-    const isExisting = await User.findOne({ id: userID });
+    const { user_id, year, month, day, description, category, amount } = req.body;
+    const isExisting = await User.findOne({ id: user_id });
     if (!isExisting) {
         return res.status(404).json({ message: 'User not found' });
     }
     try {
         const newEntry = new Calorie({
-            user_id: userID,
+            user_id: user_id,
             year: year,
             month: month,
             day: day,
