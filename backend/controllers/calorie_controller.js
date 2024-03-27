@@ -8,7 +8,7 @@ import User from "../../DB/models/user_model.js";
 async function getReport(req, res) {
     try {
         const { year, month, user_id } = req.query;
-        // Check if all required query parameters are present
+        // Check if all required query parameters are present        
         if (!year || !month || !user_id) {
             return res.status(400).json({ message: 'Missing required query parameters' });
         }
@@ -52,6 +52,15 @@ async function getReport(req, res) {
 
 async function addCalories(req, res) {
     const { user_id, year, month, day, description, category, amount } = req.body;
+    if (!year && !month && !day) {
+        const time = new Date();
+        year = time.getFullYear();
+        month = time.getMonth() + 1;
+        day = time.getDate();
+    }
+    else if (!year || !month || !day) {
+        return res.status(400).json({ message: 'Missing required fields' });
+    }
     const isExisting = await User.findOne({ id: user_id });
     if (!isExisting) {
         return res.status(404).json({ message: 'User not found' });
@@ -71,7 +80,6 @@ async function addCalories(req, res) {
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-
 }
 
 export { getReport, addCalories };

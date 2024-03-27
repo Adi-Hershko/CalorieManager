@@ -12,17 +12,14 @@ const calorieSchema = new Schema({
   },
   year: {
     type: Number,
-    required: true
   },
   month: {
     type: Number,
-    required: true,
     min: 1,
     max: 12
   },
   day: {
     type: Number,
-    required: true,
     min: 1,
     max: 31
   },
