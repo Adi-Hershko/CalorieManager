@@ -51,7 +51,7 @@ async function getReport(req, res) {
 
 
 async function addCalories(req, res) {
-    const { user_id, year, month, day, description, category, amount } = req.body;
+    let { user_id, year, month, day, description, category, amount } = req.body;
     if (!year && !month && !day) {
         const time = new Date();
         year = time.getFullYear();

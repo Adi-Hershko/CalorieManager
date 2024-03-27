@@ -1,0 +1,40 @@
+https://caloriemanager-zpr3.onrender.com
+
+testing getting the about
+-------------------------
+url=https://caloriemanager-zpr3.onrender.com/about/
+data.status_code=200
+b'[{"id":208729814,"email":"adi.hershko7@gmail.com","firstname":"Adi","lastname":"Hershko"},{"id":206752313,"email":"Oriamrani128@gmail.com","firstname":"Ori","lastname":"Amrani"}]'
+data.text=[{"id":208729814,"email":"adi.hershko7@gmail.com","firstname":"Adi","lastname":"Hershko"},{"id":206752313,"email":"Oriamrani128@gmail.com","firstname":"Ori","lastname":"Amrani"}]
+[{'id': 208729814, 'email': 'adi.hershko7@gmail.com', 'firstname': 'Adi', 'lastname': 'Hershko'}, {'id': 206752313, 'email': 'Oriamrani128@gmail.com', 'firstname': 'Ori', 'lastname': 'Amrani'}]
+firstname=Adi
+lastname=Hershko
+id=208729814
+Adi Hershko 208729814
+
+
+testing getting the report - 1
+------------------------------
+url=https://caloriemanager-zpr3.onrender.com/report/?user_id=123123&year=2024&month=3
+data.status_code=200
+b'{"breakfast":[],"lunch":[],"dinner":[],"other":[]}'
+data.text={"breakfast":[],"lunch":[],"dinner":[],"other":[]}
+[]
+
+
+testing adding calorie consumption
+----------------------------------
+url=https://caloriemanager-zpr3.onrender.com/addcalories/
+data.status_code=201
+b'{"message":"New calorie entry added","data":{"user_id":123123,"year":2024,"month":4,"day":2,"description":"milk 9","amount":8,"category":"lunch","_id":"6603e6d2da5c8200b28c28d2","id":7,"__v":0}}'
+data.text={"message":"New calorie entry added","data":{"user_id":123123,"year":2024,"month":4,"day":2,"description":"milk 9","amount":8,"category":"lunch","_id":"6603e6d2da5c8200b28c28d2","id":7,"__v":0}}
+
+
+testing getting the report - 2
+------------------------------
+url=https://caloriemanager-zpr3.onrender.com/report/?user_id=123123&year=2024&month=4
+data.status_code=200
+b'{"breakfast":[],"lunch":[{"day":2,"description":"milk 9","amount":8}],"dinner":[],"other":[]}'
+data.text={"breakfast":[],"lunch":[{"day":2,"description":"milk 9","amount":8}],"dinner":[],"other":[]}
+[]
+
